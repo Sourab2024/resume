@@ -3,204 +3,478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CURRICULAM VITAE</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Sk Portfolio</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #f9f9f9;
+    color: #111;
+    line-height: 1.4;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+.logo {
+    width: 40px;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    border: 2px solid black;
+    border-radius: 50% / 30%; /* Creates the egg shape */
+    width: 40px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px; /* Adjust font size as needed */
+}
+nav {
+    display: flex;
+    gap: 30px;
+}
+nav a {
+    text-decoration: none;
+    color: #111;
+    font-size: 16px;
+}
+section {
+    padding: 40px 0;
+}
+h1 {
+    font-size: 22px;
+    font-weight: normal;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+}
+.intro-text p {
+    font-size: 34px;
+    font-weight: normal;
+    line-height: 1.2;
+}
+.content-creation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.about-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.about-left, .about-right {
+    width: 48%;
+    font-size: 18px;
+}
+.about-right p {
+    margin-bottom: 15px;
+}
+.testimonials {
+    text-align: center;
+    padding: 40px 0;
+}
+.testimonial-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.arrow {
+    cursor: pointer;
+}
+blockquote {
+    font-size: 22px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+#contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.contact-left {
+    width: 45%;
+    font-size: 20px;
+}
+.contact-right {
+    width: 45%;
+}
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 16px;
+}
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+button {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 16px;
+}
+.blogs {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+.blog {
+    width: 30%;
+    padding-right: 20px;
+    border-right: 1px solid #000;
+}
+.blog:last-child {
+    border-right: none;
+}
+.blog p {
+    margin-bottom: 10px;
+}
+.blog a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.newsletter {
+    text-align: center;
+    padding: 60px 0;
+}
+.newsletter h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    border-top: 1px solid #000;
+}
+.newsletter p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.subscribe-form {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.subscribe-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.subscribe-form button {
+    width: 40px;
+    border: 1px solid #000;
+    background: #fff;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid #000;
+}
+.footer-text {
+    font-size: 14px;
+}
+.billing-links {
+  display: flex;
+  justify-content: center;        /* Center-align horizontally */
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;                 /* Center the whole block */
+  font-size: 18px;
+}
+
+.billing-links a {
+  flex: 1 1 40%;
+  max-width: 200px;
+  text-align: center;
+  padding: 12px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* peach-orange gradient */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.billing-links a:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+.certificate-container {
+  display: flex;
+  flex-wrap: nowrap; /* Set to 'wrap' if they overflow */
+  gap: 16px;
+  overflow-x: auto; /* Optional: allows horizontal scroll if too many images */
+  padding: 10px;
+}
+.certificate-container img {
+  width: 200px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+
+
+    </style>
 </head>
 <body>
-    <div class="outer">
-         <h1>CURRICULAM VITAE</h1>
-         <br>
-         <img src="image/M-7918.jpg">
-         <span><p><b>SOURAB KUMAR M</b><br>
-            5/1014-3A GANGANAGAR BOYAMPALAYAM<br>
-            TIRUPUR -641 603<br>
-            9600330099<br>
-            sourab2001kumar@gmail.com<br>
-            https://www.linkedin.com/in/sourab-kumar-m-2189b6247</p></span>
-            
-            <br>
-            <div class="border">
-                <i>CAREER OBJECTIVE:-</i>
+    <div class="container">
+        <header>
+            <!-- <div class="logo">
+                <img src="./logo.png" alt="Logo">
+            </div> -->
+            <div class="logo-container">
+                <div class="logo">Sk</div>
             </div>
-            <br>
-            <p font-left="50px">I seek challenging opportunities where I can fully use my skills for the success of the
-                organization.</p>
-                <br>
-                <div class="border">
-                    <i>EDUCATION QUALIFICATION:-</i>
-                    
-                </div>
-                <br>
-                    <ul>
-                        <li>B.E-ECE Till 7th Sem With 8.1 CGPA, 2024
-                            <br>Kalaignarkarunanidhi Institute of Technology, Coimbatore</li>
-                            <br><li>Graduated HSC With 77.8%, 2020
-                                <br>Cambridge Matric Hr Sec School, Tirupur</li>
-                                <br><li>Graduated SSLC With 55.6%, 2018
-                                    <br>Bishop Ubagaraswamy Hr Sec school, Tirupur</li>
+            <nav>
+                <a href="#Projects">Projects</a>
+                <a href="#about" >About</a>
+                <a href="#contact">Contact</a>
+                <a href="#others">Others</a>
+            </nav>
+        </header>
 
-                    </ul>
+        <section class="intro">
+            <div class="intro-text">
+                <p>
+                    I'm Sourab Kumar, a Software Developer & Prompt Engineer based in Coimbatore. and i am Available for Development & collaborations.
+                </p>
+            </div>
+            <div >
+                <img src="./Images/Sk img2.jpg" alt="Bird Image" style="width: 300px; height: auto;">
+            </div>
+        </section>
+
+        <section id="Projects">
+            <h1 style="font-size: 30px;">Projects</h1>
+            <div >
+                <div>
+                    <p style="font-size: 30px;">01) ERP System for Business Management </p> <br>
+                    <div class="billing-links">
+                        <a href="http://103.57.150.38:8080/auth/login" target="_blank">Gokila Garments</a>
+                        <a href="http://103.57.150.230:8090/#/Auth/Login" target="_blank">Warrior Garments</a>
+                    </div>
                     <br>
-                <div class="border">
-                    <i>TECHNICAL SKILL:-</i>
+                    <p style="font-size: 23px;">
+                        ● Designed and developed a comprehensive ERP web application tailored for a garment manufacturing to manage daily operations efficiently. <br>
+                        ● Automated key business functions such as inventory control, financial transactions, and management, resulting in improved workflow and productivity. <br>
+                        ● Integrated real-time data tracking and reporting features to support informed decision-making and optimize resource allocation.</p>
+                    <br>
                 </div>
                 <br>
-                <ul>
-                    <li>C++,C Programming (Intermediate)</li>
-                    <li>Java (Beginner)</li>
-                    <li>HTML 5</li>
-                    <li>AI (Tools)</li>
-                </ul>
-                <br>
-                <div class="border">
-                    <i>PROJECTS:-</i>
+                <div>
+                    <p style="font-size: 30px;">02) Billing Software for Business Transactions</p> <br>
+                    <div class="billing-links">
+                        <a href="https://apexdigi.pgmsoftsolution.com/#/Auth/Login"  target="_blank">Apex </a> 
+                        <a href="https://kt.pgmsoftsolution.com/#/Auth/Login" target="_blank">KT</a>
+                        <a href="https://as.pgmsoftsolution.com/#/Auth/Login"  target="_blank">As </a> 
+                        <a href="http://srpacks.pgmsoftsolution.com/#/Auth/Login"  target="_blank">SR Packs</a> 
+                    </div>
+                    <br>
+                    <p style="font-size: 23px;">
+                        ● Developed a user-friendly billing software to automate invoicing and payment processes for small medium-sized businesses.<br>
+                        ● Implemented features including customer management, product catalog, tax calculations, discounts, and receipt generation to ensure accurate and efficient billing.<br>
+                        ● Integrated reporting tools to track sales, outstanding payments, and generate financial summaries, helping businesses maintain transparent accounts.</p>
                 </div>
-                <br>
-                <ul><li><b>Implementation of New Supportive System for Visually Challenged People,</b>
-                    Our project helps blind people to recognize the objects in front of them and makes them
-                    safe by using Arduino Nano.</li>
-                </ul>
-                <br>
-                <div class="border">
-                    <i>INTERNSHIP & TRAINING:-</i>
-                </div>
-                <br>
-                <ul>
-                    <li>
-                        Undergone 1month Internship Training with stipend from 08-10-2023 to 14-11-2023 offered
-by Alpha solution, Coimbatore, In the role of "Prompt Engineering".
-                    </li>
-                    <li>
-                        Undergone 15 days Internship Training from 01-07-2022 to 18-07-2022 offered by
-ATOM Tech, Avinashi, Tirupur and learned about "Embedded NVR & Hybrid DVRs".
-                    </li>
-                    <li>
-                        Undergone 7 days Inplant Training from 21-06-2022 About "Closed-circuit television" offered
-by Atom tech, Avinashi, Tirupur.
-                    </li>
-                </ul>
-                <br>
-                <div class="border">
-                    <i>ACTIVITIES:-</i>
-                </div>
-                <br>
-                <ul>
-                    <li>
-                        Undergone a 3 days Workshop On MATLAB SOFTWARE held at KIT-
-KALAIGNARKARUNANIDHI INSTITUTE OF TECHNOLOGY, Coimbatore.
-                    </li>
-                    <li>
-                        Undergone a 3 days Workshop On PCBDESIGN held at KIT-KALAIGNARKARUNANIDHI
-INSTITUTE OF TECHNOLOGY, Coimbatore.
-                    </li>
-                </ul>
-                <br>
-                <div class="border">
-                    <i>ACHIEVEMENTS & AWARDS:-</i>
-                </div>
-                <br>
-                <ul>
-                    <li>
-                        Completed HTML 5 in Infosys Springboard.
-                    </li>
-                    <li>
-                        Completed Introduction to python in Infosys Springboard.
-                    </li>
-                    <li>Completed C, C++ Programming language in TCDS computer education.</li>
-                    <li>
-                        Completed Python fundamentals for Beginners offered by Great learning.
-                    </li>
-                    <li>
-                        Completed Python & Data Analytics by ShapeAl in Collaboration with GDG Ranchi.
-                    </li>
-                    <li>
-                        Completed Presentation Skills in Harvard Manage Mentor.
-                    </li>
-                    <li>
-                        Attended Technical Quiz competition in KPR Institutions.
-                    </li>
-                    <li>
-                        Received second price for class wise topper in 12th.
-                    </li>
-                </ul>
-                <br>
-                <div class="border">
-                    <i>LANGUAGES:-</i>
-                </div>
-                <br>
-                <ul>
-                    <li>
-                        Hindi - ( Native Speaker )
-                    </li>
-                    <li>English - ( Read/Write/Speak )</li>
-                    <li>Tamil - ( Read/Write/Speak )
+            </div>
+        </section>
 
-                    </li>
-                </ul>
-                <br>
-                <div class="border">
-                    <i>INTERESTS:-</i>
+        <section>
+            <h1 style="font-size: 30px;"> My Collage StateMent</h1>
+            <div class="content-creation">
+                <div>
+                    <p style="font-size: 20px;"> I Completed My Bachelor Of Engineering (B.E) in Electronics and Communication Engineering from KIT-KalaignarKarunanidhi Institute of Technology, Coimbatore. During my time at KIT, I Developed a Strong foundation in Electronics, Communication Systems, and Core Engineering Principles. <br> <br> The college provided me with numerous opportunities to engage in Technical Projects, Participate in Workshops, and develop both my Academic and Interpersonal Skills. My experience at KIT played a vital role in shaping my Analytical thinking and Problem-Solving Abilities, which I continue to apply in the field of Technology and Software Development.</p>
                 </div>
-                <br>
-                <ul>
-                    <li>
-                        Web Development</li>
-                        <li>Front end Developer</li>
-                    <li>Software Developer</li>
-                    <li>Promt Engineering</li>
-                </ul>
-                <br>
-                <div class="border">
-                    <i>MY STRENGTH & SKILLS:-</i>
+                <div>
+                    <img src="./Images/My Consolidate Marksheet.jpeg" alt="YouTube Preview" style="width: 600px; border-radius: 8px; border: 1px solid #ccc;">
                 </div>
-                <br>
-                <ul>
-                <li>Flexibility</li>
-                <li>Quick Adaptable</li>
-                <li>Individual Player</li>
-                <li>Continuous Improvement</li>
-                <li>Ability to work under presure</li>
-            </ul>
-                <br>
-                <div class="border">
-                    <i>HOBBIES:-</i>
-                </div>
-                <br>
-                <ul>
-                <li>Participating in social activities</li>
-                <li>Reading, Drawing, Playing and Music</li>
-                <li>Learning languages</li>
-            </ul>
-                <br>
-                <div class="border">
-                    <i>PERSONAL DETAILS:-</i>
-                </div>
-                <br>
-                <ul><li>
+            </div>
+        </section>
 
-                <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Sourab Kumar M
-                    <br>DOB&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 25/08/2001
-                    <br>Father&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Mr. Manoj Kumar R
-                    <br>Mother&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Mrs. Sunitha Devi M
-                    <br>Nationality : Indian</p></li>
-                </ul><br>
-                <div class="border">
-                    <i>DECLARATION:-</i>
+        <section>
+            <h1 style="font-size: 30px;">Certificates</h1>
+            <p style="font-size: 22px; text-align: center;">I have earned several certificates that reflect my dedication to continuous learning and professional growth. These include certifications in areas such as web development, programming languages like C++ and Java, AI and Prompt Engineering, as well as practical training through internships. 
+                <br> <br>
+            Each certificate showcases my ability to learn new technologies, apply them in real-world scenarios, and stayupdated with industry trends. These achievements not only strengthen my technical foundation but also highlightmy commitment to enhancing my skill set in a structured and credible manner. </p>
+            <br>
+            <br>
+
+            <div class="certificate-container">
+                <img src="./images certificates/HTML 5 LANGUAGE _page-0001.jpg" alt="HTML Certificate">
+                <img src="./images certificates/Infosys Python foundation.jpg" alt="Python Certificate">
+                <img src="./images certificates/Presentation.jpg" alt="Presentation">
+                <img src="./images certificates/IOT And INDUSTRY 4.0_page-0001.jpg" alt="IoT Certificate">
+                <img src="./images certificates/SOURAB KUMAR M _page-0001.jpg" alt="Sourab Kumar M Certificate">
+                <img src="./images certificates/67NeA_page-0001.jpg" alt="Another Certificate">
+                <img src="./images certificates/JPMorgan.jpg" alt="Another Certificate">
+                <img src="./images certificates/ShapeAI Data Analytics.jpg" alt="Another Certificate">
+                <img src="./images certificates/IMG-20240418-WA0024.jpg" alt="Another Certificate">
+                <!-- <img src="./images certificates/Internship Certificate_page-0001.jpg" alt="Another Certificate"> -->
+            </div>
+        </section>
+
+        <section id="about">
+            <h1 style="font-size: 30px;">About Me</h1>
+            <div class="about-columns">
+                <div class="about-left">
+                    <p>I'm a passionate web developer and electronics engineer with hands-on experience in building ERP systems, billing software, and embedded IoT projects. I specialize in front-end development using HTML, CSS, JavaScript, and frameworks like Angular and Bootstrap.</p> <br> <br> <br>
+                    <p>I enjoy collaborating on innovative tech projects, solving real-world problems, and continuously learning new tools and technologies. My goal is to contribute to impactful digital solutions while growing my professional skills.</p>
                 </div>
-                <br>
-                <ul>
-                    <li>
-                        I hereby declare that all the information mentioned in my resume is true and correct to my knowledge.<br>
+                <div class="about-right">
+                    <p>Your one-stop solution for:</p>
+                    <p style="border-bottom: 2px solid #000;">① Web Development</p>
+                    <p>Designing responsive and efficient websites using modern front-end technologies like Angular, Bootstrap, and TypeScript.</p>
+                    <p style="border-bottom: 2px solid #000;">② ERP/Billing Solutions</p>
+                    <p>Custom ERP and Billing systems tailored to businesses for efficient process management and automation.</p>
+                    <p style="border-bottom: 2px solid #000;">③ Embedded Projects</p>
+                    <p>Experience in Arduino-based systems to create supportive tech for visually challenged individuals and surveillance setups.</p>
+                </div>
+            </div>
 
-                        <br>DATE&nbsp;&nbsp;  :
-                        <br>PLACE :
-                    </li>
-                </ul>
-                <br>
-                <h3>( SOURAB KUMAR M )</h3>
 
-                
-        </div><!-- end of the outer div-->
-          
+        </section>
+
+        <section class="testimonials">
+            <h1 style="font-size: 30px;">What Company Say About Me !!!</h1>
+            <div class="testimonial-slider">
+                <img src="./Images/left arrow.png" alt="Left Arrow" class="arrow">
+                <blockquote>
+                    <!-- "Actually you have a good adaptable skill, Good team and individual player, Good intern we always welcome you.All the best for your career" -->
+                    "Actually, you have good adaptability Skills and are a good team player as well as an individual contributor. You were a good intern, and we would always welcome you back. All the best for your career." <br>
+                    <p style="margin-top: 20px; text-align: center;">— KrishnaKanth </p>
+                    <p style="text-align: center;">CEO</p>
+                </blockquote>
+                <img src="./Images/right arrow.png" alt="Right Arrow" class="arrow">
+            </div>
+        </section>
+
+        <h1 style="font-size: 30px;">Say Hello</h1>
+        <section id="contact">
+            <div class="contact-left">
+                <p>Looking to start a new project or just want to say hi? Send me an email and I'll do my best to reply within 24 hrs!</p>
+                <p style="margin-top: 20px;">If contact forms aren't your thing... send me an email at sourab2001kumar@gmail.com
+                    <br> 9600330099
+                </p>
+            </div>
+            <div class="contact-right">
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Name *</label>
+                            <input type="text" id="firstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">&nbsp;</label>
+                            <input type="text" id="lastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="inquiry">Inquiry *</label>
+                            <select id="inquiry">
+                                <option>Collab/Client</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="hello@arnau.design">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" placeholder="Hello.."></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- <h1 style="text-align: center; border-top: 1px solid #000; border-bottom: none; padding-top: 40px;">Recent Blogs</h1>
+        <div class="blogs">
+            <div class="blog">
+                <p style="font-size: 18px;">The ULTIMATE Figma UI Kit (TailWind -figma)</p>
+                <p>24.09.21</p>
+                <a href="#">See Now →</a>
+            </div>
+            <div class="blog">
+                <p style="font-size: 18px;">The ULTIMATE Figma UI Kit (TailWind -figma)</p>
+                <p>24.09.21</p>
+                <a href="#">See Now →</a>
+            </div>
+            <div class="blog">
+                <p style="font-size: 18px;">The ULTIMATE Figma UI Kit (TailWind -figma)</p>
+                <p>24.09.21</p>
+                <a href="#">See Now →</a>
+            </div>
+        </div> -->
+
+        <section id="others" class="newsletter">
+            <h2>Join the Newsletter!</h2>
+            <p>You'll receive an email every once in a while about new products, courses, and videos!</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="email@gmail.com">
+                <button type="submit">→</button>
+            </form>
+            <p style="font-size: 14px; margin-top: 20px;">We'll never share your details. See our Privacy Policy</p>
+        </section>
+
+        <footer>
+            <!-- <div class="footer-logo">
+                <img src="./logo.png" alt="Logo">
+            </div> -->
+            <div class="logo-container">
+                <div class="logo">Sk</div>
+            </div>
+            <div class="footer-text">© 2025 Sourab Kumar, LLC. All rights reserved.</div>
+            <div class="footer-icons">
+                <img src="./Images/Social Links.png Links.png" alt="Social Media Icons">
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
+
